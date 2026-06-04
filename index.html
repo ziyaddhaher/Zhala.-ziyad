@@ -114,8 +114,8 @@
 </head>
 <body>
 
-    <audio id="bgMusic" loop preload="auto" crossorigin="anonymous">
-        <source src="https://pub-c2a8bdfb8e724b0fa0a79a77c3858c4c.r2.dev/pari_cut.mp3" type="audio/mpeg">
+    <audio id="bgMusic" loop preload="auto">
+        <source src="pari.mp3" type="audio/mpeg">
     </audio>
 
     <div class="container">
@@ -142,8 +142,7 @@
                     btn.style.background = '#ff477e';
                     btn.style.color = 'white';
                 }).catch(err => {
-                    console.log("Audio play blocked:", err);
-                    // ئەگەر وێبگەڕەکە ڕێگری کرد، بەم لۆجیکە دووبارە هەوڵ دەداتەوە
+                    console.log("Play blocked, retrying...", err);
                     setTimeout(() => {
                         music.play();
                         btn.innerHTML = '⏸️ ڕاگرتنی مۆسیقا';
@@ -173,3 +172,4 @@
     </script>
 </body>
 </html>
+
